@@ -17,7 +17,6 @@ class Comment(AbstractBaseModel):
     contents = models.CharField(max_length=1000)
     like = models.PositiveIntegerField(verbose_name=_('like'))
     unlike = models.PositiveIntegerField(verbose_name=_('unlike'))
-    deleted_at = models.DateField(null=True, blank=True, verbose_name=_('deleted_at'))
 
     class Meta:
         db_table = 'comment'

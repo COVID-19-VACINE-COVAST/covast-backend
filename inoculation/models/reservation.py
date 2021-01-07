@@ -13,9 +13,10 @@ from utils.models import AbstractBaseModel
 
 class Reservation(AbstractBaseModel):
     user = models.OneToOneField(to=User, related_name='reservation', on_delete=models.CASCADE, verbose_name=_('user'))
-    hospital = models.ForeignKey(to=Hospital, related_name='reservations', on_delete=models.CASCADE,
+    hospital = models.ForeignKey(to=Hospital, related_name='hospital_reservations', on_delete=models.CASCADE,
                                  verbose_name=_('hospital'))
-    vaccine
+    vaccine = models.ForeignKey(to=Vaccine, related_name='hospital_reservations', on_delete=models.CASCADE,
+                                verbose_name=_('vaccine'))
     uid = models.UUIDField(default=uuid.uuid4, editable=False, verbose_name=_('uid'))
     reservation_time = models.DateTimeField()
 
