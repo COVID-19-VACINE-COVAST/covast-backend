@@ -18,7 +18,7 @@ class Reservation(AbstractBaseModel):
     vaccine = models.ForeignKey(to=Vaccine, related_name='hospital_reservations', on_delete=models.CASCADE,
                                 verbose_name=_('vaccine'))
     uid = models.UUIDField(default=uuid.uuid4, editable=False, verbose_name=_('uid'))
-    reservation_time = models.DateTimeField()
+    reservation_time = models.DateTimeField(verbose_name=_('reservation_time'))
 
     class Meta:
         db_table = 'reservation'
