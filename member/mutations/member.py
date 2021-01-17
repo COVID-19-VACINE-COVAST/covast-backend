@@ -5,6 +5,7 @@ from django.contrib.auth.password_validation import validate_password
 from django.db import transaction
 
 from member.models.user import User
+from member.models.token import Token
 from member.models.user_profile import UserProfile
 from member.mutations.inputs import UserProfileInput
 
@@ -23,6 +24,9 @@ class RegisterMutation(graphene.Mutation):
                 user_obj = User.objects.create(**user_data)
                 validate_password(user_data.password, user_obj)
                 user_obj.set_password(user_data.password)
+                user_token = Token.objects.create(user=user_obj)
+
+                user_token.save()
                 user_obj.save()
 
                 user_profile_data['user'] = user_obj
