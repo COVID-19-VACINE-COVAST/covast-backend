@@ -1,15 +1,14 @@
 import graphene
-from graphene_django.types import DjangoObjectType
-from member.models.user import User
-from utils.decorators import auth_token
 
-class UserType(DjangoObjectType):
-    class Meta:
-        model = User
+from member.schemas import UserType
 
-class Query(object):
-    my_info = graphene.Field(UserType, token=graphene.String())
+from utils.decorators import login_required
 
-    @auth_token
-    def resolve_my_info(self, info, user, **kwargs):
-        return user
+
+class Query(graphene.ObjectType):
+    get_user_info = graphene.Field(UserType, token=graphene.String(required=True))
+
+    @classmethod
+    @login_required
+    def resolve_get_user_info(cls, root, info, token):
+        return info.context.user
