@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'inoculation',
-    'member',
+    'member.apps.MemberConfig',
     'post',
     'utils',
 ]
