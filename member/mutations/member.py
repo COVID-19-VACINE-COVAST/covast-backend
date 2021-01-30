@@ -31,7 +31,7 @@ class RegisterMutation(graphene.Mutation):
         except Exception as e:
             raise ValidationError(e)
 
-        return RegisterMutation(success=True)
+        return cls(success=True)
 
 
 class Mutation(graphene.ObjectType):

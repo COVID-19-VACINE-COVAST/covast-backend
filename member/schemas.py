@@ -7,10 +7,10 @@ from member.models.user_profile import UserProfile
 class UserType(DjangoObjectType):
     class Meta:
         model = User
-        fields = ('username', )
+        fields = ('uuid', 'username', )
 
 
 class UserProfileType(DjangoObjectType):
     class Meta:
         model = UserProfile
-        fields = ('user', 'uid', 'last_name', 'first_name', 'birth', 'sex', 'followers_num', 'inoculation_at', )
+        fields = ('uid', 'user', 'last_name', 'first_name', 'birth', 'sex', 'followers_num', 'inoculation_at', )
