@@ -1,21 +1,19 @@
 import binascii
 import os
 
-from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
+from member.models.user import User
 
 
 class Token(models.Model):
     """
     The default authorization token model.
     """
-    key = models.CharField(_("Key"), max_length=40, primary_key=True)
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, related_name='auth_token',
-        on_delete=models.CASCADE, verbose_name=_("User")
-    )
-    created = models.DateTimeField(_("Created"), auto_now_add=True)
+    key = models.CharField(max_length=40, primary_key=True, verbose_name=_('key'))
+    user = models.OneToOneField(to=User, related_name='auth_token', on_delete=models.CASCADE, verbose_name=_('user'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
 
     class Meta:
         # Work around for a bug in Django:
@@ -23,8 +21,9 @@ class Token(models.Model):
         #
         # Also see corresponding ticket:
         # https://github.com/encode/django-rest-framework/issues/705
-        verbose_name = _("Token")
-        verbose_name_plural = _("Tokens")
+        db_table = 'token'
+        verbose_name = 'Token'
+        verbose_name_plural = '{} {}'.format(verbose_name, _('List'))
 
     def save(self, *args, **kwargs):
         if not self.key:
