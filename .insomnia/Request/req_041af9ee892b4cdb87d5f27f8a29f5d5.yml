@@ -1,0 +1,29 @@
+_id: req_041af9ee892b4cdb87d5f27f8a29f5d5
+type: Request
+parentId: fld_9f2330198a0d40b8afa921cb656b1093
+modified: 1612039921891
+created: 1612039588362
+url: "{{ _.url }}"
+name: updateReservation
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation updateReservation($token: String!, $reservationData:
+    ReservationInput!) {\n  updateReservation(token: $token, reservationData:
+    $reservationData)
+    {\n    success\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reservationData":{"uid":"d211ac6b-92ce-4cfd-9159-5be2caad73a1","hospital":"cceffa15-e138-4171-a9b5-5dd757119d48","vaccine":"37cbc190-02be-4e01-a980-0dfde925ca10","reservationTime":"2021-01-31T13:00:02"}},"operationName":"updateReservation"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_7335662467794698ad48c5fd4e11b0ce
+authentication: {}
+metaSortKey: -1612028976269
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,32 @@
+_id: req_e3b6e2e1d9354719960dd2f8c6e3906b
+type: Request
+parentId: fld_528ca6770de64d5ea841ae2e8679ebac
+modified: 1612017328803
+created: 1611970695384
+url: "{{ _.url }}"
+name: getUnlikeReactionList (Comment)
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getUnlikeReactionList($token: String!, $commentUid: UUID)
+    {\n  getUnlikeReactionList(token: $token, commentUid: $commentUid)
+    {\n    user {\n      uuid\n      username\n    }\n    comment
+    {\n      uid\n      user
+    {\n        uuid\n        username\n      }\n      review
+    {\n        uid\n        user
+    {\n          uuid\n          username\n        }\n        vaccineKind\n        contents\n        like\n        unlike\n        createdAt\n        updatedAt\n      }\n      contents\n      like\n      unlike\n      createdAt\n      updatedAt\n    }\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","commentUid":"cd818430-687a-4d9d-8fb3-31a123228181"},"operationName":"getUnlikeReactionList"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_9260e5f002da4388876a704cb6ed0159
+authentication: {}
+metaSortKey: -1611969339730.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

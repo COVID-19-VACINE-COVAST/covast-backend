@@ -1,0 +1,28 @@
+_id: req_294bf246a5454a7789a06eb86fd7a9a2
+type: Request
+parentId: fld_48de981b8d4846a0ad63b915b7848ed5
+modified: 1612039189443
+created: 1611958625481
+url: "{{ _.url }}"
+name: getVaccineDetail
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getVaccineDetail($token: String!, $vaccineUid: UUID!)
+    {\n  getVaccineDetail(token: $token, vaccineUid: $vaccineUid)
+    {\n    uid\n    name\n    developmentCountry\n    developmentCompany\n    releaseDate\n    kind\n    clinicalTrialStage\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","vaccineUid":"37cbc190-02be-4e01-a980-0dfde925ca10"},"operationName":"getVaccineDetail"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_0c225bd4938d46d0a31d415fbfccafdc
+authentication: {}
+metaSortKey: -1611958374830
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

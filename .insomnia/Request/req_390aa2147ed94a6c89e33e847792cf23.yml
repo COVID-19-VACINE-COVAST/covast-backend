@@ -1,0 +1,28 @@
+_id: req_390aa2147ed94a6c89e33e847792cf23
+type: Request
+parentId: fld_af2413f8481f48b2b18be84583df1755
+modified: 1612039174351
+created: 1612019360723
+url: "{{ _.url }}"
+name: destroyReview
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation destroyReview($token: String!, $reviewUid: UUID!)
+    {\n  destroyReview(token: $token, reviewUid: $reviewUid)
+    {\n    success\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reviewUid":"220d650d-0fa3-4ff9-a42b-94ff13c32126"},"operationName":"destroyReview"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_40c173c1b19345818ddf0fd61b1721b4
+authentication: {}
+metaSortKey: -1612019360723
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

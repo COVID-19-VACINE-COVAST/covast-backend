@@ -1,0 +1,29 @@
+_id: req_d10abd9f50884ec7bf32d344caac9131
+type: Request
+parentId: fld_5afdf80a442c47f49ed46d6bf06d7dae
+modified: 1612039169845
+created: 1611966448266
+url: "{{ _.url }}"
+name: getReviewDetail
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getReviewDetail($token: String! $reviewUid: UUID!)
+    {\n  getReviewDetail(token: $token, reviewUid: $reviewUid)
+    {\n    uid\n    user
+    {\n      uuid\n      username\n    }\n    vaccineKind\n    contents\n    like\n    unlike\n    createdAt\n    updatedAt\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reviewUid":"54fd9f77-bea3-402d-aa06-a50bd8ba5dbe"},"operationName":"getReviewDetail"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_99611c88be5344f4bee1e1ac446c909f
+authentication: {}
+metaSortKey: -1611966448266
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

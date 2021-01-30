@@ -1,0 +1,32 @@
+_id: req_7f4ef9cbb1f34cc4a919e777f9a01ed9
+type: Request
+parentId: fld_14056d6a300146c0b1948f8d66e95f72
+modified: 1612017995879
+created: 1611973504565
+url: "{{ _.url }}"
+name: login
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation login($userInput: UserInput!) {\n  login(userInput:
+    $userInput)
+    {\n    success\n    token\n  }\n}","variables":{"userInput":{"username":"reddit","password":"dlstjdwpfh"}},"operationName":"login"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_cf65c9bcd12f4622be296b598e44457b
+  - name: Authorization
+    value: Token 5c9b305d388189d89fc64de89549cc407f6adc6c
+    description: ""
+    id: pair_1c643125d24540e8b353f50ae29ab676
+authentication: {}
+metaSortKey: -1611973504565
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

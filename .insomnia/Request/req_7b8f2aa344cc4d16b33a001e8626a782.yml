@@ -1,0 +1,30 @@
+_id: req_7b8f2aa344cc4d16b33a001e8626a782
+type: Request
+parentId: fld_2ac27a102b1641809e07cb682874e59c
+modified: 1612041771725
+created: 1611958839498
+url: "{{ _.url }}"
+name: getReservationList
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getReservationList($token: String!)
+    {\n  getReservationList(token: $token) {\n    uid\n    user
+    {\n      uuid\n      username\n    }\n    hospital
+    {\n      uid\n      name\n      address\n      roadAddress\n      contact\n      placeUrl\n      startBusinessHours\n      endBusinessHours\n      latitude\n      longitude\n    }\n    vaccine
+    {\n      uid\n      name\n      developmentCountry\n      developmentCompany\n      releaseDate\n      kind\n      clinicalTrialStage\n    }\n    reservationTime\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c"},"operationName":"getReservationList"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_4e456fc4e79c4920abe1542d051279c3
+authentication: {}
+metaSortKey: -1611958845388
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

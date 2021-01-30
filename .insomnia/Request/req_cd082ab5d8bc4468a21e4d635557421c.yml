@@ -1,0 +1,28 @@
+_id: req_cd082ab5d8bc4468a21e4d635557421c
+type: Request
+parentId: fld_14056d6a300146c0b1948f8d66e95f72
+modified: 1612038660600
+created: 1611972856424
+url: "{{ _.url }}"
+name: register
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation register($userProfileData: UserProfileInput!)
+    {\n  register(userProfileData: $userProfileData)
+    {\n    success\n  }\n}","variables":{"userProfileData":{"user":{"username":"reddit","password":"dlstjdwpfh"},"lastName":"강","firstName":"민우","birth":"2001-01-12","sex":0}},"operationName":"register"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_1046f36313474dac855e8320187dbcb2
+authentication: {}
+metaSortKey: -1611973504615
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
