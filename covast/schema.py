@@ -1,11 +1,13 @@
 import graphene
 
+from inoculation.schemas import *
 from member.schemas import *
 from post.schemas import *
 
 from inoculation.queires.hospital import Query as HospitalQuery
 from inoculation.queires.reservation import Query as ReservationQuery
 from inoculation.queires.vaccine import Query as VaccineQuery
+from inoculation.mutations.reservation import Mutation as ReservationMutation
 
 from member.queries.member import Query as MemberQuery
 from member.mutations.member import Mutation as MemberMutation
@@ -25,7 +27,8 @@ class Query(HospitalQuery, ReservationQuery, VaccineQuery,
     pass
 
 
-class Mutation(MemberMutation,
+class Mutation(ReservationMutation,
+               MemberMutation,
                CommentMutation, ReactionMutation, ReviewMutation,
                graphene.ObjectType):
     pass
