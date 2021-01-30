@@ -1,15 +1,18 @@
+from django.core.validators import ValidationError
+
 from member.models.token import Token
 
-def auth_token(func):
-    def wrapper(self, info, **kwargs):
-        print(info)
+
+def login_required(func):
+    def wrapper(cls, root, info, **kwargs):
         try:
-            token = kwargs.get('token')
-            print(token)
-            token_obj = Token.objects.get(key=token)
-            kwargs = token_obj.user
+            key = kwargs.get('token')
+            token_obj = Token.objects.get(key=key)
+            info.context.user = token_obj.user
+        except Token.DoesNotExist:
+            raise ValidationError('Authentication failed')
         except Exception as e:
-            raise ValueError(e)
+            raise ValidationError(e)
         
-        return func(self, info, token_obj.user, **kwargs)
+        return func(cls, root, info, **kwargs)
     return wrapper
