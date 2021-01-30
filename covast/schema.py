@@ -7,6 +7,7 @@ from inoculation.queires.hospital import Query as HospitalQuery
 from inoculation.queires.reservation import Query as ReservationQuery
 from inoculation.queires.vaccine import Query as VaccineQuery
 
+from member.queries.member import Query as MemberQuery
 from member.mutations.member import Mutation as MemberMutation
 
 from post.queries.comment import Query as CommentQuery
