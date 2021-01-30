@@ -3,6 +3,10 @@ import graphene
 from member.schemas import *
 from post.schemas import *
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc0e41d (Resolve conflict)
 from inoculation.queires.hospital import Query as HospitalQuery
 from inoculation.queires.reservation import Query as ReservationQuery
 from inoculation.queires.vaccine import Query as VaccineQuery
@@ -19,6 +23,7 @@ from post.mutations.review import Mutation as ReviewMutation
 
 
 class Query(HospitalQuery, ReservationQuery, VaccineQuery,
+            MemberQuery,
             CommentQuery, ReactionQuery, ReviewQuery,
             graphene.ObjectType):
     pass
