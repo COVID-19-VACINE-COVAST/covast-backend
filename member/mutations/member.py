@@ -2,7 +2,6 @@ import graphene
 
 from django.core.exceptions import ValidationError
 from django.contrib.auth.password_validation import validate_password
-from django.contrib.auth import login
 from django.db import transaction
 
 from member.models.user import User
@@ -25,9 +24,7 @@ class RegisterMutation(graphene.Mutation):
                 user_obj = User.objects.create(**user_data)
                 validate_password(user_data.password, user_obj)
                 user_obj.set_password(user_data.password)
-                user_token = Token.objects.create(user=user_obj)
 
-                user_token.save()
                 user_obj.save()
 
                 user_profile_data['user'] = user_obj
@@ -53,10 +50,14 @@ class LoginMutation(graphene.Mutation):
             validate_password(user_input.password, user_obj)
 
             token = Token.objects.get(user=user_obj)
+        except User.DoesNotExist:
+            raise ValidationError('User not found')
+        except Token.DoesNotExist:
+            raise ValidationError('Token not found')
         except Exception as e:
             raise ValidationError(e)
         
-        return LoginMutation(success=True, token=token)
+        return cls(success=True, token=token)
 
 
 class Mutation(graphene.ObjectType):
