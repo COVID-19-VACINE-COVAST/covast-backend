@@ -28,4 +28,4 @@ class Reaction(AbstractBaseModel):
         verbose_name_plural = '{} {}'.format(verbose_name, _('List'))
 
     def __str__(self):
-        return f'ID({self.id}) reaction about review {self.review.id} from {self.user.username}'
+        return f'ID({self.id}) reaction from {self.user.username}'
