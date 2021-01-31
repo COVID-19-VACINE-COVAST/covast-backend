@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'inoculation',
     'member',
     'post',
+    'utils',
 ]
 
 MIDDLEWARE = [

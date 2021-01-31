@@ -1,0 +1,29 @@
+_id: req_3e912da161ea4bc5b27ac7a19a90e0a2
+type: Request
+parentId: fld_9f2330198a0d40b8afa921cb656b1093
+modified: 1612040109004
+created: 1612039940589
+url: "{{ _.url }}"
+name: destroyReservation
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation destroyReservation($token: String!, $reservationUid:
+    UUID!) {\n  destroyReservation(token: $token, reservationUid:
+    $reservationUid)
+    {\n    success\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reservationUid":"d211ac6b-92ce-4cfd-9159-5be2caad73a1"},"operationName":"destroyReservation"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_7335662467794698ad48c5fd4e11b0ce
+authentication: {}
+metaSortKey: -1612024168521
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

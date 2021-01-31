@@ -1,0 +1,28 @@
+_id: req_de72007759b44ba0b95600f9bcf1feb7
+type: Request
+parentId: fld_fc3097e3b7464414ae55c25a92ef3e97
+modified: 1612039166633
+created: 1612013834479
+url: "{{ _.url }}"
+name: getUserInfo
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getUserInfo($token: String!) {\n  getUserInfo(token:
+    $token)
+    {\n    uuid\n    username\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c"},"operationName":"getUserInfo"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_69a78a3b278f4b159b4606f94bfad113
+authentication: {}
+metaSortKey: -1612013834479
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

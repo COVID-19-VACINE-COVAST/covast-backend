@@ -1,0 +1,30 @@
+_id: req_4828517da27a4096b8a59a1ae8af1532
+type: Request
+parentId: fld_1c8b94b689db4195b108253f5c091eb7
+modified: 1612017168097
+created: 1611969085085
+url: "{{ _.url }}"
+name: getCommentDetail
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getCommentDetail($token: String!, $commentUid: UUID!)
+    {\n  getCommentDetail(token: $token, commentUid: $commentUid)
+    {\n    uid\n    user {\n      uuid\n      username\n    }\n    review
+    {\n      uid\n      user
+    {\n        uuid\n        username\n      }\n      vaccineKind\n      contents\n      like\n      unlike\n      createdAt\n      updatedAt\n    }\n    contents\n    like\n    unlike\n    createdAt\n    updatedAt\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","commentUid":"cd818430-687a-4d9d-8fb3-31a123228181"},"operationName":"getCommentDetail"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_9357080ef378451c82a19abf1688afd0
+authentication: {}
+metaSortKey: -1611969085085
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

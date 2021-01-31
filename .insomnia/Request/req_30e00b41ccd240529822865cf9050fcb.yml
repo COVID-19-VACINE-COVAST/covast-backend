@@ -1,0 +1,29 @@
+_id: req_30e00b41ccd240529822865cf9050fcb
+type: Request
+parentId: fld_87cb0ad91ef944cb94125bd677b6525e
+modified: 1611971792678
+created: 1611971207933
+url: "{{ _.url }}"
+name: createReaction
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation createReaction($authToken: String!, $reactionData:
+    ReactionInput!) {\n  createReaction(authToken: $authToken, reactionData:
+    $reactionData)
+    {\n    success\n  }\n}","variables":{"authToken":"1","reactionData":{"review":"54fd9f77-bea3-402d-aa06-a50bd8ba5dbe","kind":1}},"operationName":"createReaction"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_efd8109bf1304214b328ca3854c5306b
+authentication: {}
+metaSortKey: -1611971207933
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
