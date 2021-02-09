@@ -8,14 +8,14 @@ from inoculation.models.vaccine import Vaccine
 class HospitalType(DjangoObjectType):
     class Meta:
         model = Hospital
-        fields = ('uid', 'name', 'address', 'contact', 'start_business_hours', 'end_business_hours', 'latitude',
-                  'longitude', )
+        fields = ('uid', 'name', 'address', 'road_address', 'contact', 'place_url', 'start_business_hours',
+                  'end_business_hours', 'latitude', 'longitude', )
 
 
 class ReservationType(DjangoObjectType):
     class Meta:
         model = Reservation
-        fields = ('user', 'hospital', 'vaccine', 'uid', 'reservation_time', )
+        fields = ('uid', 'user', 'hospital', 'vaccine', 'reservation_time', )
 
 
 class VaccineType(DjangoObjectType):

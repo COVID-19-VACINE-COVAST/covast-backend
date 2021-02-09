@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'inoculation',
-    'member',
+    'member.apps.MemberConfig',
     'post',
     'utils',
 ]
@@ -127,6 +127,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'member.User'
+
+GRAPHENE = {
+    'SCHEMA': 'covast.schema.schema',
+}
 
 COVID19_HOSPITAL_SERVICE_KEY = get_secret('COVID19_HOSPITAL_SERVICE_KEY')
 KAKAO_REST_API_KEY = get_secret('KAKAO_REST_API_KEY')

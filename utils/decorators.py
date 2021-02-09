@@ -12,6 +12,7 @@ def login_required(func):
                 info.context.user = token_obj.user
             else:
                 raise Token.DoesNotExist
+
         except Token.DoesNotExist:
             raise ValidationError('Authentication failed')
         except Exception as e:

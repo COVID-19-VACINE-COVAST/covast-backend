@@ -14,7 +14,8 @@ class Vaccine(AbstractBaseModel):
     development_company = models.CharField(max_length=30, verbose_name=_('development_company'))
     release_date = models.DateField(verbose_name=_('release_date'))
     kind = models.CharField(max_length=30, verbose_name=_('kind'))
-    clinical_trial_stage = models.PositiveIntegerField(validators=[MaxValueValidator(3), MinValueValidator(1)])
+    clinical_trial_stage = models.PositiveIntegerField(validators=[MaxValueValidator(3), MinValueValidator(1)],
+                                                       verbose_name=_('clinical_trial_stage'))
 
     class Meta:
         db_table = 'vaccine'

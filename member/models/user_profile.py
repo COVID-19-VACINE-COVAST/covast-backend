@@ -22,7 +22,7 @@ class UserProfile(AbstractBaseModel):
     birth = models.DateField()
     sex = models.PositiveIntegerField(choices=SEX_CHOICES, validators=[MaxValueValidator(1), MinValueValidator(0)])
     followers_num = models.PositiveIntegerField(default=0)
-    inoculation_at = models.DateTimeField()
+    inoculation_at = models.DateTimeField(null=True)
 
     class Meta:
         db_table = 'user_profile'
