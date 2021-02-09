@@ -1,0 +1,28 @@
+_id: req_c9607bcce0dc47ba8ba9f77f571bf97e
+type: Request
+parentId: fld_4c9c0e69593b4a0697c1b612f4386eae
+modified: 1612039158208
+created: 1611947076414
+url: "{{ _.url }}"
+name: getHospitalDetail
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getHospitalDetail($token: String!, $hospitalUid: UUID!)
+    {\n  getHospitalDetail(token: $token, hospitalUid: $hospitalUid)
+    {\n    uid\n    name\n    address\n    roadAddress\n    contact\n    placeUrl\n    startBusinessHours\n    endBusinessHours\n    latitude\n    longitude\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","hospitalUid":"cceffa15-e138-4171-a9b5-5dd757119d48"},"operationName":"getHospitalDetail"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_b49342f42eca461dad9d75a692b55a77
+authentication: {}
+metaSortKey: -1611947076414
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

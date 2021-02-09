@@ -1,0 +1,28 @@
+_id: req_fd9a1d4248e045858df123a3c75a433a
+type: Request
+parentId: fld_af2413f8481f48b2b18be84583df1755
+modified: 1612039173121
+created: 1612018040956
+url: "{{ _.url }}"
+name: createReview
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation createReview($token: String!, $reviewData:
+    ReviewInput!) {\n  createReview(token: $token, reviewData: $reviewData)
+    {\n    success\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reviewData":{"vaccineKind":"몰라","contents":"괜찮음"}},"operationName":"createReview"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_11eb8956644646dfbada55440aab54ed
+authentication: {}
+metaSortKey: -1612019360773
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

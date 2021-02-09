@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  covast:
+    build: .
+    command: python manage.py runserver 0:80
+    ports:
+      - "80:80"
+    volumes:
+      - .:/covast
+    depends_on:
+      - db
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

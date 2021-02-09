@@ -11,29 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os, json
-from django.core.exceptions import ImproperlyConfigured
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+from utils.secrets import get_secret
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
-
-with open(secret_file) as f:
-    secrets = json.loads(f.read())
-
-
-def get_secret(setting, secrets=secrets):
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = "Set the {} environment variable".format(setting)
-        raise ImproperlyConfigured(error_msg)
-
 
 SECRET_KEY = get_secret("SECRET_KEY")
 
@@ -56,6 +39,7 @@ INSTALLED_APPS = [
     'inoculation',
     'member.apps.MemberConfig',
     'post',
+    'utils',
 ]
 
 MIDDLEWARE = [
@@ -94,8 +78,12 @@ WSGI_APPLICATION = 'covast.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -141,5 +129,8 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'member.User'
 
 GRAPHENE = {
-    'SCHEMA': 'covast.schema.schema'
+    'SCHEMA': 'covast.schema.schema',
 }
+
+COVID19_HOSPITAL_SERVICE_KEY = get_secret('COVID19_HOSPITAL_SERVICE_KEY')
+KAKAO_REST_API_KEY = get_secret('KAKAO_REST_API_KEY')

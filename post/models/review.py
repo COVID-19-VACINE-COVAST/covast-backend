@@ -13,8 +13,8 @@ class Review(AbstractBaseModel):
     uid = models.UUIDField(default=uuid.uuid4, editable=False, verbose_name=_('uid'))
     vaccine_kind = models.CharField(max_length=30, verbose_name=_('vaccine_kind'))
     contents = models.CharField(max_length=1000, verbose_name=_('contents'))
-    like = models.PositiveIntegerField(verbose_name=_('like'))
-    unlike = models.PositiveIntegerField(verbose_name=_('unlike'))
+    like = models.PositiveIntegerField(default=0, verbose_name=_('like'))
+    unlike = models.PositiveIntegerField(default=0, verbose_name=_('unlike'))
 
     class Meta:
         db_table = 'review'

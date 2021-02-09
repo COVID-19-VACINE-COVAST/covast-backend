@@ -1,0 +1,29 @@
+_id: req_ab49c89a3bf44878ac5951cf380f7293
+type: Request
+parentId: fld_528ca6770de64d5ea841ae2e8679ebac
+modified: 1612017327377
+created: 1611970004373
+url: "{{ _.url }}"
+name: getUnlikeReactionList (Review)
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"query getUnlikeReactionList($token: String!, $reviewUid: UUID)
+    {\n  getUnlikeReactionList(token: $token, reviewUid: $reviewUid) {\n    user
+    {\n      uuid\n      username\n    }\n    review {\n      uid\n      user
+    {\n        uuid\n        username\n      }\n      vaccineKind\n      contents\n      like\n      unlike\n      createdAt\n      updatedAt\n    }\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reviewUid":"54fd9f77-bea3-402d-aa06-a50bd8ba5dbe"},"operationName":"getUnlikeReactionList"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_9260e5f002da4388876a704cb6ed0159
+authentication: {}
+metaSortKey: -1611969377910.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

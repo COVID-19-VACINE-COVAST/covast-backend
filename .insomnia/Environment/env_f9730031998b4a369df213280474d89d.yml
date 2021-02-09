@@ -1,0 +1,14 @@
+_id: env_f9730031998b4a369df213280474d89d
+type: Environment
+parentId: env_8a75e8341189127d29bf2a084068c0c4fcd3badd
+modified: 1611946654835
+created: 1611935711537
+name: local
+data:
+  url: http://127.0.0.1:8000/graphql/
+dataPropertyOrder:
+  "&":
+    - url
+color: null
+isPrivate: false
+metaSortKey: 1611935711537

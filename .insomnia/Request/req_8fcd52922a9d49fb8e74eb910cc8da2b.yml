@@ -1,0 +1,28 @@
+_id: req_8fcd52922a9d49fb8e74eb910cc8da2b
+type: Request
+parentId: fld_af2413f8481f48b2b18be84583df1755
+modified: 1612039173706
+created: 1612019084235
+url: "{{ _.url }}"
+name: updateReview
+description: ""
+method: POST
+body:
+  mimeType: application/graphql
+  text: '{"query":"mutation updateReview($token: String!, $reviewData:
+    ReviewInput!) {\n  updateReview(token: $token, reviewData: $reviewData)
+    {\n    success\n  }\n}","variables":{"token":"5c9b305d388189d89fc64de89549cc407f6adc6c","reviewData":{"uid":"220d650d-0fa3-4ff9-a42b-94ff13c32126","vaccineKind":"몰라1","contents":"괜찮음1"}},"operationName":"updateReview"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_1a29bee1cd204d4db1d1aa54bce39460
+authentication: {}
+metaSortKey: -1612019360748
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
