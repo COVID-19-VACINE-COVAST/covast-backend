@@ -8,7 +8,7 @@ from post.models.review import Review
 class CommentType(DjangoObjectType):
     class Meta:
         model = Comment
-        fields = ('user', 'review', 'uid', 'contents', 'like', 'unlike', )
+        fields = ('uid', 'user', 'review', 'contents', 'like', 'unlike', 'created_at', 'updated_at', )
 
 
 class ReactionType(DjangoObjectType):
@@ -20,4 +20,4 @@ class ReactionType(DjangoObjectType):
 class ReviewType(DjangoObjectType):
     class Meta:
         model = Review
-        fields = ('user', 'uid', 'vaccine_kind', 'contents', 'like', 'unlike', )
+        fields = ('uid', 'user', 'vaccine_kind', 'contents', 'like', 'unlike', 'created_at', 'updated_at', )
