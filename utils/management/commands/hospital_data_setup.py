@@ -26,7 +26,7 @@ class Command(BaseCommand):
         request_url = self.COVID19_HOSPITAL_BASE_API_URL.format(service_key=self.COVID19_HOSPITAL_SERVICE_KEY,
                                                                 page_no=self.COVID19_HOSPITAL_PAGE_NO,
                                                                 num_of_rows=self.COVID19_HOSPITAL_NUM_OF_ROWS,
-                                                                type_code=self.COVID19_HOSPITAL_TYPE_CODE_LIST[0])
+                                                                type_code=self.COVID19_HOSPITAL_TYPE_CODE_LIST[2])
 
         xml_result = requests.get(request_url)
         json_result = xmltodict.parse(xml_result.content)
@@ -36,7 +36,6 @@ class Command(BaseCommand):
         for hospital in hospital_list:
             address = f"{hospital['sidoNm']} {hospital['sgguNm']} {hospital['yadmNm']}"
             hospital_data = self.get_hospital_geo_data(address)
-            print(hospital['spclAdmTyCd'])
 
             if hospital_data:
                 try:
