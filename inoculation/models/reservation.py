@@ -12,7 +12,8 @@ from utils.models import AbstractBaseModel
 
 
 class Reservation(AbstractBaseModel):
-    user = models.OneToOneField(to=User, related_name='reservation', on_delete=models.CASCADE, verbose_name=_('user'))
+    user = models.OneToOneField(to=User, related_name='reservation', on_delete=models.CASCADE, unique=True,
+                                verbose_name=_('user'))
     hospital = models.ForeignKey(to=Hospital, related_name='hospital_reservations', on_delete=models.CASCADE,
                                  verbose_name=_('hospital'))
     vaccine = models.ForeignKey(to=Vaccine, related_name='hospital_reservations', on_delete=models.CASCADE,
