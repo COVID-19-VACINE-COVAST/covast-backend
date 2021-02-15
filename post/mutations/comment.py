@@ -26,12 +26,15 @@ class CreateCommentMutation(graphene.Mutation):
             review_obj = Review.objects.get(uid=create_comment_data['review_uid'])
         except Review.DoesNotExist:
             raise ValidationError('Review not found')
-        create_comment_data['user'] = user_obj
         create_comment_data['review'] = review_obj
 
-        comment_obj = Comment.objects.create(**create_comment_data)
+        comment_obj = Comment.objects.create(**{
+            'user': user_obj,
+            'review': review_obj,
+            'contents': create_comment_data['contents']
+        })
 
-        return cls(succes=True, comment=comment_obj)
+        return cls(success=True, comment=comment_obj)
 
 
 class UpdateCommentMutation(graphene.Mutation):
@@ -47,8 +50,8 @@ class UpdateCommentMutation(graphene.Mutation):
         comment_uid = update_comment_data.pop('comment_uid')
         comment_obj = Comment.objects.filter(uid=comment_uid)
 
-        if comment_obj.is_exists():
-            comment_obj[0].update(**update_comment_data)
+        if comment_obj.exists():
+            comment_obj.update(**update_comment_data)
         else:
             raise ValidationError('Comment not found')
 

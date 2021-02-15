@@ -12,26 +12,24 @@ from inoculation.mutations.reservation import Mutation as ReservationMutation
 from member.queries.member import Query as MemberQuery
 from member.mutations.member import Mutation as MemberMutation
 
-# from post.queries.comment import Query as CommentQuery
-# from post.queries.reaction import Query as ReactionQuery
+from post.queries.comment import Query as CommentQuery
+from post.queries.reaction import Query as ReactionQuery
 from post.queries.review import Query as ReviewQuery
 from post.mutations.comment import Mutation as CommentMutation
-# from post.mutations.reaction import Mutation as ReactionMutation
+from post.mutations.reaction import Mutation as ReactionMutation
 from post.mutations.review import Mutation as ReviewMutation
 
 
 class Query(HospitalQuery, ReservationQuery, VaccineQuery,
             MemberQuery,
-            # CommentQuery, ReactionQuery, ReviewQuery,
-            ReviewQuery,
+            CommentQuery, ReactionQuery, ReviewQuery,
             graphene.ObjectType):
     pass
 
 
 class Mutation(ReservationMutation,
                MemberMutation,
-               # CommentMutation, ReactionMutation, ReviewMutation,
-               CommentMutation, ReviewMutation,
+               CommentMutation, ReactionMutation, ReviewMutation,
                graphene.ObjectType):
     pass
 

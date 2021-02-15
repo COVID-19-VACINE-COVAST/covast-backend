@@ -25,9 +25,26 @@ class CreateCommentInput(graphene.InputObjectType):
 
 
 class UpdateCommentInput(graphene.InputObjectType):
-    review_uid = graphene.UUID(required=True)
-    contents = graphene.String()
+    comment_uid = graphene.UUID(required=True)
+    contents = graphene.String(required=True)
 
 
 class DestroyCommentInput(graphene.InputObjectType):
     comment_uid = graphene.UUID(required=True)
+
+
+class CreateReactionInput(graphene.InputObjectType):
+    review = graphene.UUID()
+    comment = graphene.UUID()
+    kind = graphene.Int(required=True)
+
+
+class UpdateReactionInput(graphene.InputObjectType):
+    review_uid = graphene.UUID()
+    comment_uid = graphene.UUID()
+    kind = graphene.Int(required=True)
+
+
+class DestroyReactionInput(graphene.InputObjectType):
+    review_uid = graphene.UUID()
+    comment_uid = graphene.UUID()
