@@ -233,5 +233,5 @@ fabric.properties
 
 # secrets
 secrets.*
-!secrets.json
+secrets.json
 !secrets.py
