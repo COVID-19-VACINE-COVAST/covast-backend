@@ -1,9 +1,9 @@
 import graphene
 
-from member.models.user_profile import UserProfile
 from member.schemas import UserType, UserProfileType
 
 from utils.decorators import login_required
+from utils.libs.member import get_user_profile_by_user_obj
 
 
 class Query(graphene.ObjectType):
@@ -13,10 +13,12 @@ class Query(graphene.ObjectType):
     @classmethod
     @login_required
     def resolve_get_user_info(cls, root, info, token):
-        return info.context.user
+        user_obj = info.context.user
+        return user_obj
 
     @classmethod
     @login_required
     def resolve_get_user_profile_info(cls, root, info, token):
         user_obj = info.context.user
-        return UserProfile.objects.get(user=user_obj)
+        user_profile_obj = get_user_profile_by_user_obj(user_obj)
+        return user_profile_obj
