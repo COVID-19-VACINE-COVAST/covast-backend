@@ -11,7 +11,7 @@ from utils.decorators import login_required
 class Query(graphene.ObjectType):
     get_reaction_list = graphene.List(ReactionType, token=graphene.String(required=True), review_uid=graphene.UUID(),
                                       comment_uid=graphene.UUID())
-    get_reaction_detail = graphene.Field(Reaction, token=graphene.String(required=True),
+    get_reaction_detail = graphene.Field(ReactionType, token=graphene.String(required=True),
                                          reaction_uid=graphene.UUID(required=True))
     get_like_reaction_list = graphene.List(ReactionType, token=graphene.String(required=True), review_uid=graphene.UUID(),
                                            comment_uid=graphene.UUID())
